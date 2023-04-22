@@ -1,5 +1,7 @@
+require('dotenv').config();
 const mongoose = require('mongoose')
-const mongoURI = 'mongodb://localhost:27017/e-comm' 
+//const mongoURI = 'mongodb://localhost:27017/e-comm' 
+const mongoURI = process.env.MongoURL
 module.exports = function (callback) {
     mongoose.connect(mongoURI, { useNewUrlParser: true }, async (err, result) => {
         if (err) console.log("---" + err)
